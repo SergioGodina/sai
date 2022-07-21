@@ -1,0 +1,52 @@
+$color-1: #276E90;
+$color-2: #CECFC9;
+$color-3: #0A3143;
+$color-4: #EFEFEF;
+$color-5: #141414;
+.auto {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#arrow {
+    background-color: $color-2;
+    border: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0.7;
+    font-size: 25px;
+}
+
+#arrow:hover {
+    opacity: 1;
+}
+
+#temp {
+    background-color: transparent;
+    color: $color-1;
+    width: 150px;
+    height: 100px;
+    border: none;
+    font-size: 50px;
+}
+
+#set {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45%;
+    width: 50px;
+    border: none;
+    background-color: $color-3;
+    color: $color-4;
+    opacity: 0.9;
+}
+
+#set:hover {
+    opacity: 1;
+}

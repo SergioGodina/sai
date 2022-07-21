@@ -1,0 +1,30 @@
+$color-1: #276E90;
+$color-2: #CECFC9;
+$color-3: #0A3143;
+$color-4: #EFEFEF;
+$color-5: #141414;
+.manualMode {
+    margin: auto;
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manualMode button {
+    border: none;
+    background-color: transparent;
+}
+
+.manualMode button img {
+    width: 150px;
+}
+
+#status {
+    margin: auto;
+    background-color: #CECFC9;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}

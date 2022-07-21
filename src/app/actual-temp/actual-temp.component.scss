@@ -1,0 +1,25 @@
+$color-1: #276E90;
+$color-2: #CECFC9;
+$color-3: #0A3143;
+$color-4: #EFEFEF;
+$color-5: #141414;
+.tempActual {
+    padding-top: 100px;
+    margin: auto;
+    display: inline;
+}
+
+.tempActual p {
+    text-align: center;
+    font-size: 90px;
+}
+
+.tempActual p span button i {
+    font-size: 30px;
+    color: $color-3;
+}
+
+.tempActual p span button {
+    background-color: white;
+    border: none;
+}
