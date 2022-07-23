@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../rest.service';
+
 
 @Component({
   selector: 'app-actual-temp',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActualTempComponent implements OnInit {
 
-  constructor() { }
+  temperatura:any = [];
 
-  ngOnInit(): void {
+  constructor(public rest:RestService) { }
+
+  ngOnInit() {
+    this.getTemperatura();
+  }
+
+  getTemperatura() {
+    this.temperatura = [];
+    this.rest.getTemp().subscribe((data: {}) => {
+      this.temperatura = data;
+    });
   }
 
 }

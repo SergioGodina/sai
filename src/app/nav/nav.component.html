@@ -1,0 +1,22 @@
+<div id="head">
+    <header class="header">
+        <nav class="nav">
+            <button class="nav-toggle" (click)="cambiarModo()">
+                <i class="fas fa-bars" id="icono-menu"></i>
+            </button>
+            <div *ngIf="opcion == true">
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Wi-Fi</a></li>
+                    <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Language</a></li>
+                </ul>
+            </div>
+            <div *ngIf="opcion == false">
+                <ul class="nav-menu nav-menu_visible">
+                    <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Wi-Fi</a></li>
+                    <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Language</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+</div>

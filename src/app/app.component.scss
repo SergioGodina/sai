@@ -1,0 +1,94 @@
+* {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#logo {
+    height: 10vh;
+    margin: 2%;
+}
+
+#actual-temp {
+    margin: 5%;
+}
+
+#container-mods {
+    height: 10vh;
+    margin: 5%;
+}
+
+#container-button {
+    height: 5vh;
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#button {
+    position: absolute;
+    display: block;
+    width: 900px;
+    height: 350px;
+    background-color: #CECFC9;
+    border-radius: 350px;
+    cursor: pointer;
+    transform: scale(0.14);
+    margin: 50px auto;
+}
+
+#knob {
+    width: 290px;
+    height: 290px;
+    background-color: #0A3143;
+    background-size: 900px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    border-radius: 290px;
+    transition: 0.4s ease left, 0.4s ease background-position, 0.4s ease box-shadow;
+    z-index: 2;
+    box-shadow: 25px 0px 20px transparentize($color: #000000, $amount: .5);
+}
+
+#manual,
+#auto {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #276E90;
+    font-size: 120px;
+    font-weight: lighter;
+    font-family: "Segoe UI Light", Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 389px;
+    z-index: 1;
+}
+
+#auto {
+    margin-left: 100px;
+    visibility: hidden;
+    transition: 0.1s ease visibility;
+}
+
+#manual {
+    margin-left: 450px;
+    transition: 0.10s ease-in visibility;
+}
+
+#lol-checkbox:checked+#container-button #button #knob {
+    left: 580px;
+    background-position: -350px 0;
+    box-shadow: -25px 0px 20px transparentize($color: #000000, $amount: .5);
+}
+
+#lol-checkbox:checked+#container-button #button #manual {
+    visibility: hidden;
+}
+
+#lol-checkbox:checked+#container-button #button #auto {
+    visibility: visible;
+}

@@ -21,14 +21,19 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ActualTempComponent } from './actual-temp/actual-temp.component';
-import { StatusAireComponent } from './status-aire/status-aire.component';
 import { AutomaticoComponent } from './automatico/automatico.component';
-import { SliderButtonComponent } from './slider-button/slider-button.component';
 import { ManualComponent } from './manual/manual.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LogoComponent } from './logo/logo.component';
+import { NavComponent } from './nav/nav.component';
+
 
 @NgModule({
   declarations: [
@@ -37,10 +42,10 @@ import { ManualComponent } from './manual/manual.component';
     LoginComponent,
     SidebarComponent,
     ActualTempComponent,
-    StatusAireComponent,
     AutomaticoComponent,
-    SliderButtonComponent,
-    ManualComponent
+    ManualComponent,
+    LogoComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,9 @@ import { ManualComponent } from './manual/manual.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    HttpClientModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 <div class="auto">
-    <button id="arrow"><i class="fa-solid fa-angle-up"></i></button>
-    <button id="temp">27°C</button>
-    <button id="arrow"><i class="fa-solid fa-angle-down"></i></button>
+    <button id="arrow" (click)='addTemp()'><i class="fa-solid fa-angle-up"></i></button>
+    <button id="temp">{{temp}}</button>
+    <button id="arrow" (click)='removeTemp()'><i class="fa-solid fa-angle-down"></i></button>
 </div>
-<button id="set">Set</button>
+<button id="set" (click)='setTemp()'>Set</button>
