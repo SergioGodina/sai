@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  opcion = false;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.opcion = true;
   }
 
-
-  opcion = false;
   cambiarModo(){
     if (this.opcion == true) {
       this.opcion = false;
