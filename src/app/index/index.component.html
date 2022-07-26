@@ -1,0 +1,29 @@
+<app-apires></app-apires>
+
+<app-nav></app-nav>
+
+<div id="logo">
+    <app-logo></app-logo>
+</div>
+<div id="actual-temp">
+    <app-actual-temp></app-actual-temp>
+</div>
+
+<div id="container-mods">
+    <div *ngIf="autoMode_state == true">
+        <app-automatico></app-automatico>
+    </div>
+    <div *ngIf="autoMode_state == false">
+        <app-manual></app-manual>
+    </div>
+</div>
+
+<input type="checkbox" id="lol-checkbox" (change)="AutoChange()">
+
+<div id="container-button">
+    <label id="button" for="lol-checkbox">
+    <div id="knob"></div>
+    <div id="manual">Manual</div>
+    <div id="auto">Auto</div>
+  </label>
+</div>

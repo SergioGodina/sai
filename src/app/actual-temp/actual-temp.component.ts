@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../rest.service';
+import { ApiresComponent } from '../apires/apires.component';
 
 
 @Component({
@@ -9,19 +9,12 @@ import { RestService } from '../rest.service';
 })
 export class ActualTempComponent implements OnInit {
 
-  temperatura:any = [];
+  temp;
 
-  constructor(public rest:RestService) { }
+  constructor(public api:ApiresComponent) { }
 
   ngOnInit() {
-    this.getTemperatura();
-  }
-
-  getTemperatura() {
-    this.temperatura = [];
-    this.rest.getTemp().subscribe((data: {}) => {
-      this.temperatura = data;
-    });
+    this.temp = this.api.temp;
   }
 
 }

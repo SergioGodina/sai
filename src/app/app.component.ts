@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 
 })
-export class AppComponent {
-  title = 'mdb-angular-ui-kit-free';
+export class AppComponent implements OnInit{
 
-  opcion = false;
-
-  cambiarModo(){
-    if (this.opcion == true) {
-      this.opcion = false;
-    }else{
-      this.opcion = true;
-    }
+  ngOnInit() {
+    
   }
+
+  constructor() { }
+  title = "as"
 }

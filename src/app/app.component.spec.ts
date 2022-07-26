@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   it(`should have as title 'mdb-angular-ui-kit-free'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('mdb-angular-ui-kit-free');
+    expect(app.title).toEqual('SAI');
   });
 
   it('should render title', () => {

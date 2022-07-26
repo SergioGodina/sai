@@ -33,6 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LogoComponent } from './logo/logo.component';
 import { NavComponent } from './nav/nav.component';
+import { IndexComponent } from './index/index.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ApiresComponent } from './apires/apires.component';
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { NavComponent } from './nav/nav.component';
     AutomaticoComponent,
     ManualComponent,
     LogoComponent,
-    NavComponent
+    NavComponent,
+    IndexComponent,
+    ApiresComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,9 +72,11 @@ import { NavComponent } from './nav/nav.component';
     MdbValidationModule,
     HttpClientModule,
     FormsModule,
-
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    ApiresComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

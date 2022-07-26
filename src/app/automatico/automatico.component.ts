@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RestService } from '../rest.service';
+import { ApiresComponent } from '../apires/apires.component';
 
 @Component({
   selector: 'app-automatico',
@@ -12,49 +12,22 @@ export class AutomaticoComponent implements OnInit {
   temp = 0;
   logs = {};
 
-  constructor(public rest:RestService) { }
+  constructor(public api:ApiresComponent) { }
 
   ngOnInit(){
-    this.getLogs();
-  }
-
-  getLogs() {
-    this.registros = [];
-    this.rest.getLastLog().subscribe((data: {}) => {
-      this.registros = data;
-      this.temp = this.registros[0].adjustment_temperature;
-      console.log(data)
-    });
-  }
-
-  setTemp(){
-      this.registros = {
-        "datetime": Date.now(),
-        "adjustment_temperature": this.temp,
-        "autoMode_state": this.registros[0].autoMode_state,
-        "mHigh_state": this.registros[0].mHigh_state,
-        "mLow_state": this.registros[0].mLow_state,
-        "pumb_state": this.registros[0].pumb_state,   
-      }
-      this.addLog();
-      this.getLogs();
+    this.temp = this.api.temp;
   }
 
   addTemp(){
-    if(this.temp < 30){
-      this.temp++;
-    }
+    this.api.addTemp();
   }
-
+  
   removeTemp(){
-    if(this.temp > 0){
-      this.temp--;
-    }
+    this.api.removeTemp();
   }
 
-  addLog(){
-    this.rest.addLog(this.registros).subscribe(logs => {
-      console.log(logs);
-    });
+  setTemp(){
+    this.api.uploadLog();
   }
+
 }

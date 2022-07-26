@@ -40,12 +40,19 @@ body {
     line-height: 40px;
     text-transform: uppercase;
     width: max-content;
+    align-items: center;
 }
 
 .nav-menu-link {
     padding: 8px 12px;
     border-radius: 3px;
     transition: .5s;
+}
+
+#icono-wifi {
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 5px;
 }
 
 .nav-menu-link:hover {
@@ -80,9 +87,10 @@ body {
         top: 40px;
         width: 100%;
         padding: 20px 0;
-        height: calc(20% - 40px);
+        height: calc(30% - 40px);
         overflow-y: auto;
         left: 100%;
+        align-items: center;
     }
     .nav-menu-item {
         line-height: 30px;
