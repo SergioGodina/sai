@@ -9,8 +9,9 @@ export class ApiresService implements OnInit {
   constructor(public rest:RestService) {
   }
 
-  registros:any = {};
-  temperatura:any = {};
+  upload:any = [];
+  registros:any = [];
+  temperatura:any = [];
 
   current_temperature;
   logs = {};
@@ -32,7 +33,7 @@ export class ApiresService implements OnInit {
     setTimeout(() => {
       this.current_temperature = this.temperatura[0].current_temperature
       this.getAutoCheck();
-    }, 2000);
+    }, 500);
   }
 
 
@@ -41,7 +42,6 @@ export class ApiresService implements OnInit {
   getLogs() {
     this.registros = [];
     this.rest.getLastLog().subscribe((data: {}) => {
-      this.registros = data;
       let dat = data;
       this.autoMode_state =  dat[0].autoMode_state;
       this.mHigh_state = dat[0].mHigh_state;
@@ -49,24 +49,20 @@ export class ApiresService implements OnInit {
       this.pumb_state = dat[0].pumb_state;
       this.adjustment_temperature = dat[0].adjustment_temperature;
     });
-    console.log("Datos de Logs almacenados")
   }
 
   uploadLog(){
-    this.registros = {
+    this.upload = {
       "datetime": Date.now(),
       "adjustment_temperature": this.adjustment_temperature,
       "autoMode_state": this.autoMode_state,
       "mHigh_state": this.mHigh_state,
       "mLow_state": this.mLow_state,
       "pumb_state": this.pumb_state,   
-    }
+    };
     setTimeout(() => {
-      this.rest.addLog(this.registros).subscribe();
-      console.log("Subiendo datos a logs" + this.registros)
-    }, 300);
-    setTimeout(() => {
-      this.getLogs();
+      console.log(this.upload)
+      this.rest.addLog(this.upload).subscribe();
     }, 500);
   }
 
@@ -76,7 +72,6 @@ export class ApiresService implements OnInit {
     this.rest.getTemp().subscribe((data: {}) => {
       this.temperatura = data;
     });
-    console.log("Datos de Temperatura almacenados")
   }
 
 
@@ -156,13 +151,13 @@ AutoChange(){
     this.autoMode_state = true
     autoMode.style.visibility = "visible";
     manualMode.style.visibility = "hidden";
-    this.uploadLog();
   } else {
     this.autoMode_state = false
     manualMode.style.visibility = "visible";
     autoMode.style.visibility = "hidden";
-    this.uploadLog();
   }
+  console.log(this.autoMode_state)
+  this.uploadLog();
 }
 
 getAutoCheck(){

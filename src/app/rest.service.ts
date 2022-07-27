@@ -17,9 +17,6 @@ const httpOptions = {
 
 export class RestService {
 
-
-
-  
   constructor(private http: HttpClient) { }
 
   private extractData(res: Response): any {
