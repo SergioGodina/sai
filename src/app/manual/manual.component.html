@@ -1,13 +1,13 @@
 <div class="manualMode">
-    <button class="boton" (click)="changeEngine()">
+    <button class="boton" (click)="changeEngine()" [disabled]="button">
         <img class="fan" src="assets/images/fan.png">
         <p class="fanStatus">Ventilador</p>
     </button>
 
-    <button class="boton" (click)="changePumb()">
+    <button class="boton" (click)="changePumb()" [disabled]="button">
         <img class="pump" src="assets/images/pump.png">
         <p class="pumpStatus">Bomba</p>
     </button>
 </div>
 
-<h2 id="status">Estatus</h2>
+<h2 id="status">High: {{this.api.mHigh_state + "\n"}}Low: {{this.api.mLow_state + "\n"}}Pumb: {{this.api.pumb_state}}</h2>

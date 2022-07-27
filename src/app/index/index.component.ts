@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { ApiresComponent } from '../apires/apires.component';
+import { ApiresService } from '../apires.service';
 
 @Component({
   selector: 'app-index',
@@ -14,9 +14,12 @@ export class IndexComponent implements OnInit {
   index = "";
 
   ngOnInit() {
-    this.autoMode_state = this.api.autoMode_state;
+    setTimeout(() => {
+      this.autoMode_state = this.api.autoMode_state;
+    }, 500);
+    
   } 
-  constructor(public api:ApiresComponent, private route:Router) { }
+  constructor(public api:ApiresService, private route:Router) { }
 
   AutoChange(){
     this.api.AutoChange();

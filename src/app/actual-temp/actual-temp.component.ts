@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiresComponent } from '../apires/apires.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiresService } from '../apires.service'; 
 
 
 @Component({
@@ -9,12 +9,21 @@ import { ApiresComponent } from '../apires/apires.component';
 })
 export class ActualTempComponent implements OnInit {
 
+
+  temperatura;
   temp;
 
-  constructor(public api:ApiresComponent) { }
+  constructor(private api:ApiresService) { 
+  }
+
+  @Input()
 
   ngOnInit() {
-    this.temp = this.api.temp;
+    this.api.ngOnInit();
+    setTimeout(() => {
+      this.temperatura = this.api.getCurrentTemp();
+    }, 500);
   }
+
 
 }

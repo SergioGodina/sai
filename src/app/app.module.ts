@@ -35,7 +35,7 @@ import { LogoComponent } from './logo/logo.component';
 import { NavComponent } from './nav/nav.component';
 import { IndexComponent } from './index/index.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { ApiresComponent } from './apires/apires.component';
+import { RestService } from './rest.service';
 
 
 @NgModule({
@@ -50,7 +50,6 @@ import { ApiresComponent } from './apires/apires.component';
     LogoComponent,
     NavComponent,
     IndexComponent,
-    ApiresComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +74,7 @@ import { ApiresComponent } from './apires/apires.component';
     AppRoutingModule,
   ],
   providers: [
-    ApiresComponent
+    RestService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ApiresComponent } from '../apires/apires.component';
+import { ApiresService } from '../apires.service'; 
 
 @Component({
   selector: 'app-automatico',
@@ -9,21 +9,26 @@ import { ApiresComponent } from '../apires/apires.component';
 export class AutomaticoComponent implements OnInit {
 
   registros:any = [];
-  temp = 0;
+  temp;
   logs = {};
 
-  constructor(public api:ApiresComponent) { }
+  constructor(public api:ApiresService) { }
 
   ngOnInit(){
-    this.temp = this.api.temp;
+    this.api.getLogs();
+    setTimeout(() => {
+      this.temp = this.api.adjustment_temperature;
+    }, 500);
   }
 
   addTemp(){
     this.api.addTemp();
+    this.temp = this.api.adjustment_temperature;
   }
   
   removeTemp(){
     this.api.removeTemp();
+    this.temp = this.api.adjustment_temperature;
   }
 
   setTemp(){

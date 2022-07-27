@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiresComponent } from '../apires/apires.component';
+import { ApiresService } from '../apires.service';
 
 @Component({
   selector: 'app-manual',
@@ -10,10 +10,11 @@ export class ManualComponent implements OnInit {
 
   registros:any = [];
 
-  constructor(public api:ApiresComponent) { }
+  constructor(public api:ApiresService) { }
 
+  button;
   ngOnInit(): void {
-   
+    this.button = this.api.button;
   }
 
   changeEngine(){
@@ -23,5 +24,4 @@ export class ManualComponent implements OnInit {
   changePumb(){
     this.api.changePumb();
   }
-
 }
