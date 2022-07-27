@@ -2,10 +2,10 @@
     <h1>Sing in with your account</h1>
 
     <label>User</label>
-    <input type="text" placeholder="Enter an user" required>
+    <input type="text" [(ngModel)]="user" placeholder="Enter an user" required>
     <label>Password</label>
-    <input type="password" placeholder="Enter a password" required>
-    <button><a href="#">Login</a></button>
+    <input type="password" [(ngModel)]="password" placeholder="Enter a password" required>
+    <button type="submit" (click)="login()"><a href="#">Login</a></button>
     <hr>
     <p>You do not have an account? <a href="#">Register</a></p>
 </div>

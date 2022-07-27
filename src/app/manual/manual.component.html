@@ -10,4 +10,9 @@
     </button>
 </div>
 
-<h2 id="status">High: {{this.api.mHigh_state + "\n"}}Low: {{this.api.mLow_state + "\n"}}Pumb: {{this.api.pumb_state}}</h2>
+<h2 id="status" *ngIf="this.api.mHigh_state == true && this.api.pumb_state == true">Ventilador alto frio</h2>
+<h2 id="status" *ngIf="this.api.mHigh_state == true && this.api.pumb_state == false">Ventilador alto</h2>
+<h2 id="status" *ngIf="this.api.mLow_state == true && this.api.pumb_state == true">Ventilador bajo frio</h2>
+<h2 id="status" *ngIf="this.api.mLow_state == true && this.api.pumb_state == false">Ventilador bajo</h2>
+<h2 id="status" *ngIf="this.api.mHigh_state == false && this.api.mLow_state == false && this.api.pumb_state == true">Bomba encendida</h2>
+<h2 id="status" *ngIf="this.api.mLow_state == false && this.api.mHigh_state == false && this.api.pumb_state == false">Apagado</h2>

@@ -68,6 +68,12 @@ export class RestService {
       map(this.extractData));
   }
 
+  login(user: any): Observable<any> {
+    return this.http.post(endpoint + 'users/post' + JSON.stringify(user), httpOptions);
+  }
+  
+
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
