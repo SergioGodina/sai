@@ -36,8 +36,6 @@ export class ApiresService implements OnInit {
     }, 500);
   }
 
-
-
   //logs
   getLogs() {
     this.registros = [];

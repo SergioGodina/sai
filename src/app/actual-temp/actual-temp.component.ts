@@ -10,7 +10,7 @@ import { ApiresService } from '../apires.service';
 export class ActualTempComponent implements OnInit {
 
 
-  temperatura;
+  temperatura: number;
   temp;
 
   constructor(private api:ApiresService) { 
@@ -21,7 +21,7 @@ export class ActualTempComponent implements OnInit {
   ngOnInit() {
     this.api.ngOnInit();
     setTimeout(() => {
-      this.temperatura = this.api.getCurrentTemp();
+      this.temperatura = this.api.getCurrentTemp().toFixed(1);
     }, 500);
   }
 

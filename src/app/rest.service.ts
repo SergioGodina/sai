@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
+import sha256 from 'crypto-js/sha256';
 
 
 const endpoint = 'https://mongodbutch.herokuapp.com/api/';
@@ -88,3 +89,10 @@ export class RestService {
     };
   }
 }
+
+  var user = "SGodina"
+  var pass = "SG54321"
+
+  var userEn = sha256(user);
+  var passEn = sha256(pass);
+
